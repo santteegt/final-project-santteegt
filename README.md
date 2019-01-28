@@ -99,6 +99,14 @@ A detailed explanation of the design patterns used in SupportEth can be found [h
 
 A detailed explanation of what measures were taken to ensure SupportEth contracts are not susceptible to common attacks can be found [here](avoiding_common_attacks.md)
 
+### Grading Rubric Checklist
+
+In order to help you evaluate the project, you can find the grading rubric checklist with comments and references to the source code [here](grading_rubric.md)
+
 ### License
 
 [Licence](LICENSE)
+
+### Further development
+
+After the Consensys DP finishes, further development will take place in the [fork](https://github.com/santteegt/final-project-santteegt) on my Github account
