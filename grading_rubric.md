@@ -19,7 +19,7 @@ Here you can find comments and references to the source code to help you evaluat
 ## Design Pattern Requirements
 
 * **Implement a circuit breaker / emergency stop**:
-* **"What other design patterns have you used or not used?"**:
+* **What other design patterns have you used or not used?**:
 
 ## Security Tools / Common Attacks
 
