@@ -50,7 +50,7 @@ truffle compile
 truffle migrate --reset
 ```
 
-* Once truffle migrate finishes, run the following command to deploy the dApp on IPFS
+* You can check the three migration scripts [here](migrations/). Once truffle migrate finishes, run the following command to deploy the dApp on IPFS
 
 ```bash
 npm run build
