@@ -43,8 +43,8 @@ ipfs.id().then(response => {
 });
 
 function uploadToIPFS() {
-	// var dirpath = path.resolve(__dirname, 'build');
-    var dirpath = path.resolve('./', 'build');
+	var dirpath = path.resolve(__dirname, 'build');
+    // var dirpath = path.resolve('./', 'build');
 	console.log('dirpath', dirpath);
     return ipfs.addFromFs(dirpath, {recursive: true})
     // return ipfs.add(filesprod, {recursive: true})
