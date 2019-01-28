@@ -47,12 +47,13 @@ git clone https://github.com/dev-bootcamp-2019/final-project-santteegt
 cd final-project-santteegt
 npm install
 truffle compile
-truffle migrate
+truffle migrate --reset
 ```
 
 * Once truffle migrate finishes, run the following command to deploy the dApp on IPFS
 
 ```bash
+npm run build
 npm run deploy-ipfs-dev
 ```
 
