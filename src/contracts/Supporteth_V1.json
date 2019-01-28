@@ -1,0 +1,2103 @@
+{
+  "contractName": "Supporteth_V1",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "publishers",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "relayers",
+      "outputs": [
+        {
+          "name": "active",
+          "type": "bool"
+        },
+        {
+          "name": "expendedGas",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "subscribers",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_pubContract",
+          "type": "address"
+        }
+      ],
+      "name": "addPublisher",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isOwner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_subContract",
+          "type": "address"
+        }
+      ],
+      "name": "addSubscriber",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "name": "initialize",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_relayer",
+          "type": "address"
+        },
+        {
+          "name": "_expendedGas",
+          "type": "uint256"
+        }
+      ],
+      "name": "sumExpendedGas",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "relayer",
+          "type": "address"
+        }
+      ],
+      "name": "AddedRelayer",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "relayer",
+          "type": "address"
+        }
+      ],
+      "name": "RemovedRelayer",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_relayer",
+          "type": "address"
+        }
+      ],
+      "name": "addRelayer",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_relayer",
+          "type": "address"
+        }
+      ],
+      "name": "removeRelayer",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6080604052336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16600073ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a361111f806100cf6000396000f3fe6080604052600436106100c5576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630a4d85cd146100ca5780635300f8411461015b5780635745ae28146101cb57806360f0a5ac1461025c578063715018a6146102ad578063763f323d146102c45780638da5cb5b146103155780638f32d59b1461036c57806394555d1a1461039b578063c4d66de8146103ec578063db8ea6a61461043d578063dd39f00d14610498578063f2fde38b146104e9575b600080fd5b3480156100d657600080fd5b50610119600480360360208110156100ed57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061053a565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561016757600080fd5b506101aa6004803603602081101561017e57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061056d565b60405180831515151581526020018281526020019250505060405180910390f35b3480156101d757600080fd5b5061021a600480360360208110156101ee57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061059e565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561026857600080fd5b506102ab6004803603602081101561027f57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506105d1565b005b3480156102b957600080fd5b506102c261076c565b005b3480156102d057600080fd5b50610313600480360360208110156102e757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061083e565b005b34801561032157600080fd5b5061032a610a56565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561037857600080fd5b50610381610a7f565b604051808215151515815260200191505060405180910390f35b3480156103a757600080fd5b506103ea600480360360208110156103be57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610ad6565b005b3480156103f857600080fd5b5061043b6004803603602081101561040f57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610cee565b005b34801561044957600080fd5b506104966004803603604081101561046057600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610d31565b005b3480156104a457600080fd5b506104e7600480360360208110156104bb57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610de3565b005b3480156104f557600080fd5b506105386004803603602081101561050c57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610fa6565b005b60016020528060005260406000206000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60036020528060005260406000206000915090508060000160009054906101000a900460ff16908060010154905082565b60026020528060005260406000206000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6105d9610a7f565b15156105e457600080fd5b600360008273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160009054906101000a900460ff1615156106a8576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260168152602001807f52656c6179657220646f6573206e6f742065786973740000000000000000000081525060200191505060405180910390fd5b600360008273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600080820160006101000a81549060ff0219169055600182016000905550507ff29639ce9f9f4d0a646c7c99291b0b1d3ca3a017b8f543d03d79d9f6fc4c582481604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a150565b610774610a7f565b151561077f57600080fd5b600073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a360008060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b8061085e8173ffffffffffffffffffffffffffffffffffffffff16610fc5565b151561086957600080fd5b60008273ffffffffffffffffffffffffffffffffffffffff16638da5cb5b6040518163ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040160206040518083038186803b1580156108cd57600080fd5b505afa1580156108e1573d6000803e3d6000fd5b505050506040513d60208110156108f757600080fd5b810190808051906020019092919050505090503373ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415156109d3576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260268152602001807f53656e64657220646f6573206e6f74206f776e205075626c697368657220636f81526020017f6e7472616374000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b82600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505050565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614905090565b80610af68173ffffffffffffffffffffffffffffffffffffffff16610fc5565b1515610b0157600080fd5b60008273ffffffffffffffffffffffffffffffffffffffff166320e036306040518163ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040160206040518083038186803b158015610b6557600080fd5b505afa158015610b79573d6000803e3d6000fd5b505050506040513d6020811015610b8f57600080fd5b810190808051906020019092919050505090503373ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515610c6b576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260268152602001807f53656e64657220646f6573206e6f74206f776e205075626c697368657220636f81526020017f6e7472616374000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b82600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505050565b600060149054906101000a900460ff16151515610d0a57600080fd5b610d1381610fa6565b6001600060146101000a81548160ff02191690831515021790555050565b610d39610a7f565b1515610d4457600080fd5b610d9981600360008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060010154610fd890919063ffffffff16565b600360008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600101819055505050565b610deb610a7f565b1515610df657600080fd5b600360008273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160009054906101000a900460ff16151515610ebb576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601a8152602001807f52656c6179657220616c7265616479207265676973746572656400000000000081525060200191505060405180910390fd5b60408051908101604052806001151581526020016000815250600360008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548160ff021916908315150217905550602082015181600101559050507fd68caa126e02d8ca92285deaa53a0d5d4f692e587b00422ce504661cc74361bc81604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a150565b610fae610a7f565b1515610fb957600080fd5b610fc281610ff9565b50565b600080823b905060008111915050919050565b6000808284019050838110151515610fef57600080fd5b8091505092915050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561103557600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505056fea165627a7a72305820ccd17aae41a1704bead5369836098ca71ad5b6ae4f4be5660b4a9d1a8540ce590029",
+  "deployedBytecode": "0x6080604052600436106100c5576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630a4d85cd146100ca5780635300f8411461015b5780635745ae28146101cb57806360f0a5ac1461025c578063715018a6146102ad578063763f323d146102c45780638da5cb5b146103155780638f32d59b1461036c57806394555d1a1461039b578063c4d66de8146103ec578063db8ea6a61461043d578063dd39f00d14610498578063f2fde38b146104e9575b600080fd5b3480156100d657600080fd5b50610119600480360360208110156100ed57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061053a565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561016757600080fd5b506101aa6004803603602081101561017e57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061056d565b60405180831515151581526020018281526020019250505060405180910390f35b3480156101d757600080fd5b5061021a600480360360208110156101ee57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061059e565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561026857600080fd5b506102ab6004803603602081101561027f57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506105d1565b005b3480156102b957600080fd5b506102c261076c565b005b3480156102d057600080fd5b50610313600480360360208110156102e757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061083e565b005b34801561032157600080fd5b5061032a610a56565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561037857600080fd5b50610381610a7f565b604051808215151515815260200191505060405180910390f35b3480156103a757600080fd5b506103ea600480360360208110156103be57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610ad6565b005b3480156103f857600080fd5b5061043b6004803603602081101561040f57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610cee565b005b34801561044957600080fd5b506104966004803603604081101561046057600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610d31565b005b3480156104a457600080fd5b506104e7600480360360208110156104bb57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610de3565b005b3480156104f557600080fd5b506105386004803603602081101561050c57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610fa6565b005b60016020528060005260406000206000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60036020528060005260406000206000915090508060000160009054906101000a900460ff16908060010154905082565b60026020528060005260406000206000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6105d9610a7f565b15156105e457600080fd5b600360008273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160009054906101000a900460ff1615156106a8576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260168152602001807f52656c6179657220646f6573206e6f742065786973740000000000000000000081525060200191505060405180910390fd5b600360008273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600080820160006101000a81549060ff0219169055600182016000905550507ff29639ce9f9f4d0a646c7c99291b0b1d3ca3a017b8f543d03d79d9f6fc4c582481604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a150565b610774610a7f565b151561077f57600080fd5b600073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a360008060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b8061085e8173ffffffffffffffffffffffffffffffffffffffff16610fc5565b151561086957600080fd5b60008273ffffffffffffffffffffffffffffffffffffffff16638da5cb5b6040518163ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040160206040518083038186803b1580156108cd57600080fd5b505afa1580156108e1573d6000803e3d6000fd5b505050506040513d60208110156108f757600080fd5b810190808051906020019092919050505090503373ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415156109d3576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260268152602001807f53656e64657220646f6573206e6f74206f776e205075626c697368657220636f81526020017f6e7472616374000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b82600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505050565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614905090565b80610af68173ffffffffffffffffffffffffffffffffffffffff16610fc5565b1515610b0157600080fd5b60008273ffffffffffffffffffffffffffffffffffffffff166320e036306040518163ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040160206040518083038186803b158015610b6557600080fd5b505afa158015610b79573d6000803e3d6000fd5b505050506040513d6020811015610b8f57600080fd5b810190808051906020019092919050505090503373ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515610c6b576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260268152602001807f53656e64657220646f6573206e6f74206f776e205075626c697368657220636f81526020017f6e7472616374000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b82600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505050565b600060149054906101000a900460ff16151515610d0a57600080fd5b610d1381610fa6565b6001600060146101000a81548160ff02191690831515021790555050565b610d39610a7f565b1515610d4457600080fd5b610d9981600360008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060010154610fd890919063ffffffff16565b600360008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600101819055505050565b610deb610a7f565b1515610df657600080fd5b600360008273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160009054906101000a900460ff16151515610ebb576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601a8152602001807f52656c6179657220616c7265616479207265676973746572656400000000000081525060200191505060405180910390fd5b60408051908101604052806001151581526020016000815250600360008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548160ff021916908315150217905550602082015181600101559050507fd68caa126e02d8ca92285deaa53a0d5d4f692e587b00422ce504661cc74361bc81604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a150565b610fae610a7f565b1515610fb957600080fd5b610fc281610ff9565b50565b600080823b905060008111915050919050565b6000808284019050838110151515610fef57600080fd5b8091505092915050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561103557600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505056fea165627a7a72305820ccd17aae41a1704bead5369836098ca71ad5b6ae4f4be5660b4a9d1a8540ce590029",
+  "sourceMap": "209:895:10:-;;;524:10:17;515:6;;:19;;;;;;;;;;;;;;;;;;582:6;;;;;;;;;;;549:40;;578:1;549:40;;;;;;;;;;;;209:895:10;;;;;;",
+  "deployedSourceMap": "209:895:10:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;726:45:9;;8:9:-1;5:2;;;30:1;27;20:12;5:2;726:45:9;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;726:45:9;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1091:43;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1091:43:9;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1091:43:9;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;859:46;;8:9:-1;5:2;;;30:1;27;20:12;5:2;859:46:9;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;859:46:9;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;892:209:10;;8:9:-1;5:2;;;30:1;27;20:12;5:2;892:209:10;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;892:209:10;;;;;;;;;;;;;;;;;;;;;;1347:137:17;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1347:137:17;;;;;;1980:274:9;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1980:274:9;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1980:274:9;;;;;;;;;;;;;;;;;;;;;;659:77:17;;8:9:-1;5:2;;;30:1;27;20:12;5:2;659:77:17;;;;;;;;;;;;;;;;;;;;;;;;;;;979:90;;8:9:-1;5:2;;;30:1;27;20:12;5:2;979:90:17;;;;;;;;;;;;;;;;;;;;;;;;;;;2392:293:9;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2392:293:9;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;2392:293:9;;;;;;;;;;;;;;;;;;;;;;1707:148;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1707:148:9;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1707:148:9;;;;;;;;;;;;;;;;;;;;;;3543:179;;8:9:-1;5:2;;;30:1;27;20:12;5:2;3543:179:9;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;3543:179:9;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;555:221:10;;8:9:-1;5:2;;;30:1;27;20:12;5:2;555:221:10;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;555:221:10;;;;;;;;;;;;;;;;;;;;;;1655:107:17;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1655:107:17;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1655:107:17;;;;;;;;;;;;;;;;;;;;;;726:45:9;;;;;;;;;;;;;;;;;;;;;;:::o;1091:43::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;859:46::-;;;;;;;;;;;;;;;;;;;;;;:::o;892:209:10:-;863:9:17;:7;:9::i;:::-;855:18;;;;;;;;968:8:10;:18;977:8;968:18;;;;;;;;;;;;;;;:25;;;;;;;;;;;;960:60;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1037:8;:18;1046:8;1037:18;;;;;;;;;;;;;;;;1030:25;;;;;;;;;;;;;;;;;;;;;;;1070:24;1085:8;1070:24;;;;;;;;;;;;;;;;;;;;;;892:209;:::o;1347:137:17:-;863:9;:7;:9::i;:::-;855:18;;;;;;;;1445:1;1408:40;;1429:6;;;;;;;;;;;1408:40;;;;;;;;;;;;1475:1;1458:6;;:19;;;;;;;;;;;;;;;;;;1347:137::o;1980:274:9:-;2042:12;1254:18;:5;:16;;;:18::i;:::-;1246:27;;;;;;;;2070:13;2096:12;2086:29;;;:31;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2086:31:9;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;2086:31:9;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;2086:31:9;;;;;;;;;;;;;;;;2070:47;;2148:10;2139:19;;:5;:19;;;2131:70;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2235:12;2215:10;:17;2226:5;2215:17;;;;;;;;;;;;;;;;:32;;;;;;;;;;;;;;;;;;1283:1;1980:274;;:::o;659:77:17:-;697:7;723:6;;;;;;;;;;;716:13;;659:77;:::o;979:90::-;1019:4;1056:6;;;;;;;;;;;1042:20;;:10;:20;;;1035:27;;979:90;:::o;2392:293:9:-;2455:12;1254:18;:5;:16;;;:18::i;:::-;1246:27;;;;;;;;2483:13;2521:12;2499:46;;;:48;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2499:48:9;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;2499:48:9;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;2499:48:9;;;;;;;;;;;;;;;;2483:64;;2578:10;2569:19;;:5;:19;;;2561:70;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2666:12;2645:11;:18;2657:5;2645:18;;;;;;;;;;;;;;;;:33;;;;;;;;;;;;;;;;;;1283:1;2392:293;;:::o;1707:148::-;1769:12;;;;;;;;;;;1768:13;1760:22;;;;;;;;1792:25;1810:6;1792:17;:25::i;:::-;1842:4;1827:12;;:19;;;;;;;;;;;;;;;;;;1707:148;:::o;3543:179::-;863:9:17;:7;:9::i;:::-;855:18;;;;;;;;3667:48:9;3702:12;3667:8;:18;3676:8;3667:18;;;;;;;;;;;;;;;:30;;;:34;;:48;;;;:::i;:::-;3634:8;:18;3643:8;3634:18;;;;;;;;;;;;;;;:30;;:81;;;;3543:179;;:::o;555:221:10:-;863:9:17;:7;:9::i;:::-;855:18;;;;;;;;629:8:10;:18;638:8;629:18;;;;;;;;;;;;;;;:25;;;;;;;;;;;;628:26;620:65;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;716:16;;;;;;;;;724:4;716:16;;;;;;730:1;716:16;;;695:8;:18;704:8;695:18;;;;;;;;;;;;;;;:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;747:22;760:8;747:22;;;;;;;;;;;;;;;;;;;;;;555:221;:::o;1655:107:17:-;863:9;:7;:9::i;:::-;855:18;;;;;;;;1727:28;1746:8;1727:18;:28::i;:::-;1655:107;:::o;463:616:22:-;523:4;539:12;1038:7;1026:20;1018:28;;1071:1;1064:4;:8;1057:15;;;463:616;;;:::o;1431:145:16:-;1489:7;1508:9;1524:1;1520;:5;1508:17;;1548:1;1543;:6;;1535:15;;;;;;;;1568:1;1561:8;;;1431:145;;;;:::o;1906:183:17:-;1999:1;1979:22;;:8;:22;;;;1971:31;;;;;;;;2046:8;2017:38;;2038:6;;;;;;;;;;;2017:38;;;;;;;;;;;;2074:8;2065:6;;:17;;;;;;;;;;;;;;;;;;1906:183;:::o",
+  "source": "pragma solidity ^0.5.0;\n\nimport \"./Supporteth_V0.sol\";\n\n/// @title Supporteth smart contract\n/// @dev Holds system data\n/// @notice This contract purpose is to show the Upgradable Proxy contract functionality\ncontract Supporteth_V1 is Supporteth_V0 {\n\n    event AddedRelayer(address relayer);\n    event RemovedRelayer(address relayer);\n\n    /**\n     * @dev Register a relayer to process transactions for onboarding\n     * @notice a relayer can be used to process trx of new users with no ether\n     * @ @param _relayer Relayer account address\n     */\n    function addRelayer(address _relayer) public onlyOwner {\n        require(!relayers[_relayer].active, \"Relayer already registered\");\n        relayers[_relayer] = Relayer(true, 0);\n        emit AddedRelayer(_relayer);\n    }\n\n    /**\n     * @dev Remove a relayer from the registry\n     * @param _relayer Relayer account address\n     */\n    function removeRelayer(address _relayer) public onlyOwner {\n        require(relayers[_relayer].active, \"Relayer does not exist\");\n        delete relayers[_relayer];\n        emit RemovedRelayer(_relayer);\n    }\n\n}\n",
+  "sourcePath": "/Users/santteegt/Consensys-Academy/Resources/Final project/truffle-react/contracts/Supporteth_V1.sol",
+  "ast": {
+    "absolutePath": "/Users/santteegt/Consensys-Academy/Resources/Final project/truffle-react/contracts/Supporteth_V1.sol",
+    "exportedSymbols": {
+      "Supporteth_V1": [
+        2082
+      ]
+    },
+    "id": 2083,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2015,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:10"
+      },
+      {
+        "absolutePath": "/Users/santteegt/Consensys-Academy/Resources/Final project/truffle-react/contracts/Supporteth_V0.sol",
+        "file": "./Supporteth_V0.sol",
+        "id": 2016,
+        "nodeType": "ImportDirective",
+        "scope": 2083,
+        "sourceUnit": 2014,
+        "src": "25:29:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 2017,
+              "name": "Supporteth_V0",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2013,
+              "src": "235:13:10",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Supporteth_V0_$2013",
+                "typeString": "contract Supporteth_V0"
+              }
+            },
+            "id": 2018,
+            "nodeType": "InheritanceSpecifier",
+            "src": "235:13:10"
+          }
+        ],
+        "contractDependencies": [
+          2013,
+          2783
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Supporteth smart contract\n @dev Holds system data\n @notice This contract purpose is to show the Upgradable Proxy contract functionality",
+        "fullyImplemented": true,
+        "id": 2082,
+        "linearizedBaseContracts": [
+          2082,
+          2013,
+          2783
+        ],
+        "name": "Supporteth_V1",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 2022,
+            "name": "AddedRelayer",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2021,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2020,
+                  "indexed": false,
+                  "name": "relayer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2022,
+                  "src": "275:15:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2019,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "275:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "274:17:10"
+            },
+            "src": "256:36:10"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 2026,
+            "name": "RemovedRelayer",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2025,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2024,
+                  "indexed": false,
+                  "name": "relayer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2026,
+                  "src": "318:15:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2023,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "318:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "317:17:10"
+            },
+            "src": "297:38:10"
+          },
+          {
+            "body": {
+              "id": 2055,
+              "nodeType": "Block",
+              "src": "610:166:10",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 2038,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "UnaryOperation",
+                        "operator": "!",
+                        "prefix": true,
+                        "src": "628:26:10",
+                        "subExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "baseExpression": {
+                              "argumentTypes": null,
+                              "id": 2034,
+                              "name": "relayers",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 1828,
+                              "src": "629:8:10",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Relayer_$1824_storage_$",
+                                "typeString": "mapping(address => struct Supporteth_V0.Relayer storage ref)"
+                              }
+                            },
+                            "id": 2036,
+                            "indexExpression": {
+                              "argumentTypes": null,
+                              "id": 2035,
+                              "name": "_relayer",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 2028,
+                              "src": "638:8:10",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "629:18:10",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Relayer_$1824_storage",
+                              "typeString": "struct Supporteth_V0.Relayer storage ref"
+                            }
+                          },
+                          "id": 2037,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "active",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 1821,
+                          "src": "629:25:10",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "52656c6179657220616c72656164792072656769737465726564",
+                        "id": 2039,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "656:28:10",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_b2d3ee0c146337cc9b48240c84645c89e004a51b9adcb12d46d7444e8a64d5ac",
+                          "typeString": "literal_string \"Relayer already registered\""
+                        },
+                        "value": "Relayer already registered"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_b2d3ee0c146337cc9b48240c84645c89e004a51b9adcb12d46d7444e8a64d5ac",
+                          "typeString": "literal_string \"Relayer already registered\""
+                        }
+                      ],
+                      "id": 2033,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        3407,
+                        3408
+                      ],
+                      "referencedDeclaration": 3408,
+                      "src": "620:7:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 2040,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "620:65:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2041,
+                  "nodeType": "ExpressionStatement",
+                  "src": "620:65:10"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2049,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 2042,
+                        "name": "relayers",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1828,
+                        "src": "695:8:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Relayer_$1824_storage_$",
+                          "typeString": "mapping(address => struct Supporteth_V0.Relayer storage ref)"
+                        }
+                      },
+                      "id": 2044,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 2043,
+                        "name": "_relayer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2028,
+                        "src": "704:8:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "695:18:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Relayer_$1824_storage",
+                        "typeString": "struct Supporteth_V0.Relayer storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "74727565",
+                          "id": 2046,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "bool",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "724:4:10",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "value": "true"
+                        },
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 2047,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "730:1:10",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          }
+                        ],
+                        "id": 2045,
+                        "name": "Relayer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1824,
+                        "src": "716:7:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Relayer_$1824_storage_ptr_$",
+                          "typeString": "type(struct Supporteth_V0.Relayer storage pointer)"
+                        }
+                      },
+                      "id": 2048,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "716:16:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Relayer_$1824_memory",
+                        "typeString": "struct Supporteth_V0.Relayer memory"
+                      }
+                    },
+                    "src": "695:37:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Relayer_$1824_storage",
+                      "typeString": "struct Supporteth_V0.Relayer storage ref"
+                    }
+                  },
+                  "id": 2050,
+                  "nodeType": "ExpressionStatement",
+                  "src": "695:37:10"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 2052,
+                        "name": "_relayer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2028,
+                        "src": "760:8:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 2051,
+                      "name": "AddedRelayer",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2022,
+                      "src": "747:12:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 2053,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "747:22:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2054,
+                  "nodeType": "EmitStatement",
+                  "src": "742:27:10"
+                }
+              ]
+            },
+            "documentation": "@dev Register a relayer to process transactions for onboarding\n@notice a relayer can be used to process trx of new users with no ether\n@ @param _relayer Relayer account address",
+            "id": 2056,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 2031,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 2030,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 2717,
+                  "src": "600:9:10",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "600:9:10"
+              }
+            ],
+            "name": "addRelayer",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2029,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2028,
+                  "name": "_relayer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2056,
+                  "src": "575:16:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2027,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "575:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "574:18:10"
+            },
+            "returnParameters": {
+              "id": 2032,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "610:0:10"
+            },
+            "scope": 2082,
+            "src": "555:221:10",
+            "stateMutability": "nonpayable",
+            "superFunction": 1968,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 2080,
+              "nodeType": "Block",
+              "src": "950:151:10",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 2064,
+                            "name": "relayers",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1828,
+                            "src": "968:8:10",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Relayer_$1824_storage_$",
+                              "typeString": "mapping(address => struct Supporteth_V0.Relayer storage ref)"
+                            }
+                          },
+                          "id": 2066,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "id": 2065,
+                            "name": "_relayer",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 2058,
+                            "src": "977:8:10",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "968:18:10",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Relayer_$1824_storage",
+                            "typeString": "struct Supporteth_V0.Relayer storage ref"
+                          }
+                        },
+                        "id": 2067,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "active",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 1821,
+                        "src": "968:25:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "52656c6179657220646f6573206e6f74206578697374",
+                        "id": 2068,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "995:24:10",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_2e67a7793975d078d841a8fcc94d1c486c1d81cadbb4c593d7764fb08fc6bf3e",
+                          "typeString": "literal_string \"Relayer does not exist\""
+                        },
+                        "value": "Relayer does not exist"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_2e67a7793975d078d841a8fcc94d1c486c1d81cadbb4c593d7764fb08fc6bf3e",
+                          "typeString": "literal_string \"Relayer does not exist\""
+                        }
+                      ],
+                      "id": 2063,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        3407,
+                        3408
+                      ],
+                      "referencedDeclaration": 3408,
+                      "src": "960:7:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 2069,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "960:60:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2070,
+                  "nodeType": "ExpressionStatement",
+                  "src": "960:60:10"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2074,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "delete",
+                    "prefix": true,
+                    "src": "1030:25:10",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 2071,
+                        "name": "relayers",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1828,
+                        "src": "1037:8:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Relayer_$1824_storage_$",
+                          "typeString": "mapping(address => struct Supporteth_V0.Relayer storage ref)"
+                        }
+                      },
+                      "id": 2073,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 2072,
+                        "name": "_relayer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2058,
+                        "src": "1046:8:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1037:18:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Relayer_$1824_storage",
+                        "typeString": "struct Supporteth_V0.Relayer storage ref"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2075,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1030:25:10"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 2077,
+                        "name": "_relayer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2058,
+                        "src": "1085:8:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 2076,
+                      "name": "RemovedRelayer",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2026,
+                      "src": "1070:14:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 2078,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1070:24:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2079,
+                  "nodeType": "EmitStatement",
+                  "src": "1065:29:10"
+                }
+              ]
+            },
+            "documentation": "@dev Remove a relayer from the registry\n@param _relayer Relayer account address",
+            "id": 2081,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 2061,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 2060,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 2717,
+                  "src": "940:9:10",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "940:9:10"
+              }
+            ],
+            "name": "removeRelayer",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2059,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2058,
+                  "name": "_relayer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2081,
+                  "src": "915:16:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2057,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "915:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "914:18:10"
+            },
+            "returnParameters": {
+              "id": 2062,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "950:0:10"
+            },
+            "scope": 2082,
+            "src": "892:209:10",
+            "stateMutability": "nonpayable",
+            "superFunction": 1989,
+            "visibility": "public"
+          }
+        ],
+        "scope": 2083,
+        "src": "209:895:10"
+      }
+    ],
+    "src": "0:1105:10"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/santteegt/Consensys-Academy/Resources/Final project/truffle-react/contracts/Supporteth_V1.sol",
+    "exportedSymbols": {
+      "Supporteth_V1": [
+        2082
+      ]
+    },
+    "id": 2083,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2015,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:10"
+      },
+      {
+        "absolutePath": "/Users/santteegt/Consensys-Academy/Resources/Final project/truffle-react/contracts/Supporteth_V0.sol",
+        "file": "./Supporteth_V0.sol",
+        "id": 2016,
+        "nodeType": "ImportDirective",
+        "scope": 2083,
+        "sourceUnit": 2014,
+        "src": "25:29:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 2017,
+              "name": "Supporteth_V0",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2013,
+              "src": "235:13:10",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Supporteth_V0_$2013",
+                "typeString": "contract Supporteth_V0"
+              }
+            },
+            "id": 2018,
+            "nodeType": "InheritanceSpecifier",
+            "src": "235:13:10"
+          }
+        ],
+        "contractDependencies": [
+          2013,
+          2783
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Supporteth smart contract\n @dev Holds system data\n @notice This contract purpose is to show the Upgradable Proxy contract functionality",
+        "fullyImplemented": true,
+        "id": 2082,
+        "linearizedBaseContracts": [
+          2082,
+          2013,
+          2783
+        ],
+        "name": "Supporteth_V1",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 2022,
+            "name": "AddedRelayer",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2021,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2020,
+                  "indexed": false,
+                  "name": "relayer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2022,
+                  "src": "275:15:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2019,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "275:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "274:17:10"
+            },
+            "src": "256:36:10"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 2026,
+            "name": "RemovedRelayer",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2025,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2024,
+                  "indexed": false,
+                  "name": "relayer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2026,
+                  "src": "318:15:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2023,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "318:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "317:17:10"
+            },
+            "src": "297:38:10"
+          },
+          {
+            "body": {
+              "id": 2055,
+              "nodeType": "Block",
+              "src": "610:166:10",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 2038,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "UnaryOperation",
+                        "operator": "!",
+                        "prefix": true,
+                        "src": "628:26:10",
+                        "subExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "baseExpression": {
+                              "argumentTypes": null,
+                              "id": 2034,
+                              "name": "relayers",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 1828,
+                              "src": "629:8:10",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Relayer_$1824_storage_$",
+                                "typeString": "mapping(address => struct Supporteth_V0.Relayer storage ref)"
+                              }
+                            },
+                            "id": 2036,
+                            "indexExpression": {
+                              "argumentTypes": null,
+                              "id": 2035,
+                              "name": "_relayer",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 2028,
+                              "src": "638:8:10",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "629:18:10",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Relayer_$1824_storage",
+                              "typeString": "struct Supporteth_V0.Relayer storage ref"
+                            }
+                          },
+                          "id": 2037,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "active",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 1821,
+                          "src": "629:25:10",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "52656c6179657220616c72656164792072656769737465726564",
+                        "id": 2039,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "656:28:10",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_b2d3ee0c146337cc9b48240c84645c89e004a51b9adcb12d46d7444e8a64d5ac",
+                          "typeString": "literal_string \"Relayer already registered\""
+                        },
+                        "value": "Relayer already registered"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_b2d3ee0c146337cc9b48240c84645c89e004a51b9adcb12d46d7444e8a64d5ac",
+                          "typeString": "literal_string \"Relayer already registered\""
+                        }
+                      ],
+                      "id": 2033,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        3407,
+                        3408
+                      ],
+                      "referencedDeclaration": 3408,
+                      "src": "620:7:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 2040,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "620:65:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2041,
+                  "nodeType": "ExpressionStatement",
+                  "src": "620:65:10"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2049,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 2042,
+                        "name": "relayers",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1828,
+                        "src": "695:8:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Relayer_$1824_storage_$",
+                          "typeString": "mapping(address => struct Supporteth_V0.Relayer storage ref)"
+                        }
+                      },
+                      "id": 2044,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 2043,
+                        "name": "_relayer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2028,
+                        "src": "704:8:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "695:18:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Relayer_$1824_storage",
+                        "typeString": "struct Supporteth_V0.Relayer storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "74727565",
+                          "id": 2046,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "bool",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "724:4:10",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "value": "true"
+                        },
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 2047,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "730:1:10",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          }
+                        ],
+                        "id": 2045,
+                        "name": "Relayer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1824,
+                        "src": "716:7:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Relayer_$1824_storage_ptr_$",
+                          "typeString": "type(struct Supporteth_V0.Relayer storage pointer)"
+                        }
+                      },
+                      "id": 2048,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "716:16:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Relayer_$1824_memory",
+                        "typeString": "struct Supporteth_V0.Relayer memory"
+                      }
+                    },
+                    "src": "695:37:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Relayer_$1824_storage",
+                      "typeString": "struct Supporteth_V0.Relayer storage ref"
+                    }
+                  },
+                  "id": 2050,
+                  "nodeType": "ExpressionStatement",
+                  "src": "695:37:10"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 2052,
+                        "name": "_relayer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2028,
+                        "src": "760:8:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 2051,
+                      "name": "AddedRelayer",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2022,
+                      "src": "747:12:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 2053,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "747:22:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2054,
+                  "nodeType": "EmitStatement",
+                  "src": "742:27:10"
+                }
+              ]
+            },
+            "documentation": "@dev Register a relayer to process transactions for onboarding\n@notice a relayer can be used to process trx of new users with no ether\n@ @param _relayer Relayer account address",
+            "id": 2056,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 2031,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 2030,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 2717,
+                  "src": "600:9:10",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "600:9:10"
+              }
+            ],
+            "name": "addRelayer",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2029,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2028,
+                  "name": "_relayer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2056,
+                  "src": "575:16:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2027,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "575:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "574:18:10"
+            },
+            "returnParameters": {
+              "id": 2032,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "610:0:10"
+            },
+            "scope": 2082,
+            "src": "555:221:10",
+            "stateMutability": "nonpayable",
+            "superFunction": 1968,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 2080,
+              "nodeType": "Block",
+              "src": "950:151:10",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 2064,
+                            "name": "relayers",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1828,
+                            "src": "968:8:10",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Relayer_$1824_storage_$",
+                              "typeString": "mapping(address => struct Supporteth_V0.Relayer storage ref)"
+                            }
+                          },
+                          "id": 2066,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "id": 2065,
+                            "name": "_relayer",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 2058,
+                            "src": "977:8:10",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "968:18:10",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Relayer_$1824_storage",
+                            "typeString": "struct Supporteth_V0.Relayer storage ref"
+                          }
+                        },
+                        "id": 2067,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "active",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 1821,
+                        "src": "968:25:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "52656c6179657220646f6573206e6f74206578697374",
+                        "id": 2068,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "995:24:10",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_2e67a7793975d078d841a8fcc94d1c486c1d81cadbb4c593d7764fb08fc6bf3e",
+                          "typeString": "literal_string \"Relayer does not exist\""
+                        },
+                        "value": "Relayer does not exist"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_2e67a7793975d078d841a8fcc94d1c486c1d81cadbb4c593d7764fb08fc6bf3e",
+                          "typeString": "literal_string \"Relayer does not exist\""
+                        }
+                      ],
+                      "id": 2063,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        3407,
+                        3408
+                      ],
+                      "referencedDeclaration": 3408,
+                      "src": "960:7:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 2069,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "960:60:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2070,
+                  "nodeType": "ExpressionStatement",
+                  "src": "960:60:10"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2074,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "delete",
+                    "prefix": true,
+                    "src": "1030:25:10",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 2071,
+                        "name": "relayers",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1828,
+                        "src": "1037:8:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Relayer_$1824_storage_$",
+                          "typeString": "mapping(address => struct Supporteth_V0.Relayer storage ref)"
+                        }
+                      },
+                      "id": 2073,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 2072,
+                        "name": "_relayer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2058,
+                        "src": "1046:8:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1037:18:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Relayer_$1824_storage",
+                        "typeString": "struct Supporteth_V0.Relayer storage ref"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2075,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1030:25:10"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 2077,
+                        "name": "_relayer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2058,
+                        "src": "1085:8:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 2076,
+                      "name": "RemovedRelayer",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2026,
+                      "src": "1070:14:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 2078,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1070:24:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2079,
+                  "nodeType": "EmitStatement",
+                  "src": "1065:29:10"
+                }
+              ]
+            },
+            "documentation": "@dev Remove a relayer from the registry\n@param _relayer Relayer account address",
+            "id": 2081,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 2061,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 2060,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 2717,
+                  "src": "940:9:10",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "940:9:10"
+              }
+            ],
+            "name": "removeRelayer",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2059,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2058,
+                  "name": "_relayer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2081,
+                  "src": "915:16:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2057,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "915:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "914:18:10"
+            },
+            "returnParameters": {
+              "id": 2062,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "950:0:10"
+            },
+            "scope": 2082,
+            "src": "892:209:10",
+            "stateMutability": "nonpayable",
+            "superFunction": 1989,
+            "visibility": "public"
+          }
+        ],
+        "scope": 2083,
+        "src": "209:895:10"
+      }
+    ],
+    "src": "0:1105:10"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.1",
+  "updatedAt": "2019-01-27T23:41:16.107Z",
+  "devdoc": {
+    "details": "Holds system data",
+    "methods": {
+      "addPublisher(address)": {
+        "details": "register a Publisher into the system",
+        "params": {
+          "_pubContract": "Publisher contract address"
+        }
+      },
+      "addRelayer(address)": {
+        "details": "Register a relayer to process transactions for onboarding"
+      },
+      "addSubscriber(address)": {
+        "details": "register a Subscriber into the system",
+        "params": {
+          "_subContract": "PublisherSubscription contract address"
+        }
+      },
+      "initialize(address)": {
+        "details": "Initialize method to set the owner when using a Upgradable proxy",
+        "params": {
+          "_owner": "address of the owner of the contract"
+        }
+      },
+      "isOwner()": {
+        "return": "true if `msg.sender` is the owner of the contract."
+      },
+      "owner()": {
+        "return": "the address of the owner."
+      },
+      "removeRelayer(address)": {
+        "details": "Remove a relayer from the registry",
+        "params": {
+          "_relayer": "Relayer account address"
+        }
+      },
+      "renounceOwnership()": {
+        "details": "Allows the current owner to relinquish control of the contract."
+      },
+      "sumExpendedGas(address,uint256)": {
+        "details": "sum gas expended by a relayer",
+        "params": {
+          "_expendedGas": "expended Gas on a relayed trx",
+          "_relayer": "Relayer account address"
+        }
+      },
+      "transferOwnership(address)": {
+        "details": "Allows the current owner to transfer control of the contract to a newOwner.",
+        "params": {
+          "newOwner": "The address to transfer ownership to."
+        }
+      }
+    },
+    "title": "Supporteth smart contract"
+  },
+  "userdoc": {
+    "methods": {
+      "addRelayer(address)": {
+        "notice": "a relayer can be used to process trx of new users with no ether @param _relayer Relayer account address"
+      },
+      "renounceOwnership()": {
+        "notice": "Renouncing to ownership will leave the contract without an owner. It will not be possible to call the functions with the `onlyOwner` modifier anymore."
+      }
+    },
+    "notice": "This contract purpose is to show the Upgradable Proxy contract functionality"
+  }
+}
