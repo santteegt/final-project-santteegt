@@ -1,8 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from "react-redux";
 
-import { getIPFS, encodeData } from '../../util/ipfs'
-
 import Button from '@material-ui/core/Button';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -15,8 +13,10 @@ import ReactMarkdown from 'react-markdown/with-html'
 // import 'draft-js/dist/Draft.css'
 import RichTextEditor from 'react-rte';
 
+import { getIPFS, encodeData, getBytes32FromMultiash, getMultihashFromBytes32 } from '../../util/ipfs'
+
 const mapStateToProps = state => {
-  return { };
+  return { networkId: state.user.data.networkId };
 };
 // + `<img src="https://cdn-images-1.medium.com/max/1600/1*u90cJ3k-ZXvLlgWg1apBEg.png" alt="Ethereum Image">, \n`
 // + `![alt text][logo]`
@@ -47,7 +47,8 @@ class Publisher extends Component {
         tab: 0,
         newPostHeadImgURI: "https://blog.sketchfab.com/wp-content/themes/blog-sketchfab/img/thumb-placeholder.png",
         newPost: RichTextEditor.createValueFromString(markdownExample, 'markdown'),
-        markdown: markdownExample
+        markdown: markdownExample,
+        processing: null
     };
 
     handleChange = (event, tab) => {
@@ -71,8 +72,20 @@ class Publisher extends Component {
     };
 
     post = (event) => {
-        console.log(this.state.newPost.toString('markdown'))
-        this.setState({tab: 0, newPost: RichTextEditor.createValueFromString(markdownExample, 'markdown')})
+        // console.log(this.state.newPost.toString('markdown'))
+
+        let data = {timestamp: Date(), post: this.state.newPost.toString('markdown')}
+        const ipfs = getIPFS()
+        let content = encodeData(ipfs, JSON.stringify(data))
+        this.setState({processing: 'PROCESSING... PLEASE WAIT'})
+        ipfs.add(content, (err, res) => {
+            this.setState({processing: undefined})
+            alert(`Post stored on IPFS: Visit https://ipfs.infura.io/ipfs/${res[0].hash}`)
+            const mh = getBytes32FromMultiash(res[0].hash)
+            // console.log(mh)
+            alert(`This should be stored in the contract {digest:${mh.digest}, hashFunction:${mh.hashFunction}, size:${mh.size}`)
+            this.setState({tab: 0, newPost: RichTextEditor.createValueFromString(markdownExample, 'markdown')})
+        })
     }
 
   constructor(props, { authData }) {
@@ -86,7 +99,7 @@ class Publisher extends Component {
   // };
 
   render() {
-    const { tab, markdown, newPost } = this.state;
+    const { tab, markdown, newPost, processing } = this.state;
     return(
         <div className="main-container">
             <h1>Publisher</h1>
@@ -95,17 +108,17 @@ class Publisher extends Component {
                 <Tab label="New Post" />
                 <Tab label="Subscribers" />
             </Tabs>
-            {tab === 0 ? (
+            {tab === 1 ? (
                 <div>
                     <h2>Posts</h2>
                     <h3>You do not have any article posted yet </h3>
                 </div>
             ):null}
-            {tab === 1 ? (
+            {tab === 0 ? (
                 <div>
                     <div>
                         <Typography gutterBottom variant="headline" component="h2">
-                            Write a new post
+                            Write a new post {processing}
                         </Typography>
                         <Button variant="contained" color="primary" onClick={(event) => this.preview(event)}>
                         Preview
