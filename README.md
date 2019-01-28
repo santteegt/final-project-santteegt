@@ -3,7 +3,7 @@
 
 ## Final Project: SupportEth - A Decentralized Patreon
 
-* **Author**: Santiago Gonzalez Toral
+* **Author**: Santiago Gonzalez Toral ([Github](https://github.com/santteegt)|[email](mailto:hernangt12re3@gmail.com))
 
 ### What is this project about?
 
@@ -90,3 +90,15 @@ truffle test
 ```
 
 Smart contracts and unit tests were properly documented using the [natspec style guidelines for comments](https://solidity.readthedocs.io/en/v0.5.2/style-guide.html#natspec). A detailed explanation of each test suite is provided on each of the test source code files in the [test](test/) directory.
+
+### Design Patterns decisions
+
+A detailed explanation of the design patterns used in SupportEth can be found [here](design_patterns_decisions.md)
+
+### Avoiding common attacks
+
+A detailed explanation of what measures were taken to ensure SupportEth contracts are not susceptible to common attacks can be found [here](avoiding_common_attacks.md)
+
+### License
+
+[Licence](LICENSE)
