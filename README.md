@@ -68,7 +68,7 @@ or https://ipfs.io/ipns/QmXrERdCi7yuxrjiYcUG6wE9GbJW3a82tRyAMJTZVD2uPA
 
 On the terminal, please copy the URL pointing to your `localhost` node (for faster testing purposes), and open it on your preferred browser. Remember that it needs to have Metamask installed to interact with the dApp.
 
-**NOTE**: within the dApp, you can see an option to login with uPort. You can authorize the login using their mobile app, but the dApp interaction with the smart contracts is not supported yet, so Metamask is the only alternative to transact within Ethereum.
+**NOTE**: within the dApp, you can see an option to login with uPort (currently disabled due to errors). ~~You can authorize the login using their mobile app, but the dApp interaction with the smart contracts is not supported yet~~, so Metamask is the only alternative to interact with the dApp.
 
 * For development purposes, it is possible to deploy the dApp by running the command `npm run start`. The dApp will be deployed at http://localhost:3000
 
