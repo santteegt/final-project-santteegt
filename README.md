@@ -111,3 +111,7 @@ In order to help you evaluate the project, you can find the grading rubric check
 ### Further development
 
 After the Consensys DP finishes, further development will take place in the [fork](https://github.com/santteegt/final-project-santteegt) on my Github account
+
+### Gittron - Autonomous fundraising bot
+
+<table border="0"><tr>  <td><a href="https://gittron.me/bots/0x7414aac7cda2e5f4aadd83f4aceba267"><img src="https://s3.amazonaws.com/od-flat-svg/0x7414aac7cda2e5f4aadd83f4aceba267.png" alt="gittron" width="50"/></a></td><td><a href="https://gittron.me/bots/0x7414aac7cda2e5f4aadd83f4aceba267">SUPPORT US WITH GITTRON</a></td></tr></table>
